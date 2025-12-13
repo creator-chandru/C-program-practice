@@ -27,7 +27,7 @@ int main()
         printf("Enter Quantity:");
         scanf("%d",&books[i].Quantity);
     }
-    Record = fopen("Record.dat","wb");
+    Record = fopen("Record.dat","ab");
     fwrite(books,sizeof(struct library),num,Record);
     fclose(Record);
     Record = fopen("Record.dat","rb");
@@ -127,6 +127,7 @@ int main()
          }
          if(found == 0){
             printf("\nNO BOOK FOUND");
+            break;
          }
          rewind(Record);
          found=0;
